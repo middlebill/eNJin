@@ -1,0 +1,100 @@
+var moveLeft = false;
+var moveUp = false;
+var moveRight = false;
+var moveDown = false;
+var spacebar = false;
+
+
+document.addEventListener("keydown" , checkKeyDown , false);
+document.addEventListener("keyup" , checkKeyUp , false);
+
+
+function checkKeyDown(e){
+	if(e.keyCode == 32){
+		//SpaceBar
+		spacebar = true;
+		
+	}
+	if(e.keyCode == 37){
+		//Left
+		moveLeft = true;
+	}
+	if(e.keyCode == 38){
+		//Up
+	}
+	if(e.keyCode == 39){
+		//Right
+		moveRight = true;
+	}
+	if(e.keyCode == 40){
+		//Down
+	}
+
+} 
+
+function checkKeyUp(e){
+	if(e.keyCode == 32){
+		//SpaceBar
+		spacebar = false;
+	}
+	if(e.keyCode == 37){
+		//Left
+		moveLeft = false;
+	}
+	if(e.keyCode == 38){
+		//Up
+	}
+	if(e.keyCode == 39){
+		//Right
+		moveRight = false;
+	}
+	if(e.keyCode == 40){
+		//Down
+	}
+
+} 
+
+
+
+
+
+
+
+var gravity = function(){
+	if(player.y + player.h < grass.y + grass.h){
+	  player.y++;
+	}
+
+}
+
+
+
+
+
+var movements = function(){
+	if(moveLeft){
+		player.x--
+	}
+	if(moveRight){
+		player.x++
+	}
+	if(moveUp){
+
+	}
+	if(moveDown){
+
+	}
+
+
+
+}
+
+
+
+
+var dmgDetection = function(){
+
+
+
+}
+
