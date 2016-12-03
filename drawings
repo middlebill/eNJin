@@ -1,0 +1,62 @@
+var player = {}
+
+player.x = canvas.width/2;
+player.y = 0;
+player.health = 100;
+player.lives = 3;
+player.score = 0;
+player.w = 100;
+player.h = 100;
+player.img = new Image();
+player.img.src = "mascot.png";
+
+
+var drawPlayer = function(){
+	ctx.drawImage(player.img , player.x , player.y , player.w , player.h)
+
+
+}
+
+
+
+
+var drawEnemy = function(){
+	new gamePlayer(100 , h - 100 , 100 , 100 , 100 , 3 , "http://vignette1.wikia.nocookie.net/villains/images/4/4b/200px-KennethIsBACK.png/revision/latest?cb=20130411232802")
+
+}
+
+
+
+
+
+var level = 1;
+
+
+
+
+var drawStats = function(){
+
+	ctx.beginPath()
+	ctx.font = "40px Arial"
+	ctx.fillStyle = "#6B0088"
+	ctx.fillText("Score: " + player.score , 20, 50)
+	ctx.closePath();
+
+
+	ctx.beginPath()
+	ctx.font = "40px Arial"
+	ctx.fillStyle = "#ff0000"
+	ctx.fillText("HP: " + player.health , 200, 50)
+	ctx.closePath();
+
+	ctx.beginPath()
+	ctx.font = "40px Arial"
+	ctx.fillStyle = "#efefef"
+	ctx.fillText("Lives: " + player.lives , 400, 50)
+	ctx.closePath();
+
+
+}
+
+
+
