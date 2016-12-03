@@ -1,0 +1,82 @@
+var sky = {};
+
+sky.x = 0;
+sky.y = 0;
+sky.w = w;
+sky.h = h;
+
+sky.img = new Image();
+sky.img.src = "http://www.clipartkid.com/images/154/clipartbest-com-FBz82W-clipart.png"
+
+
+var sun = {};
+
+sun.x = -120;
+sun.y = -140;
+sun.w = 300;
+sun.h = 300;
+
+sun.img = new Image();
+sun.img.src = "https://openclipart.org/image/2400px/svg_to_png/194877/cartoonsun.png";
+
+
+
+
+
+var grass = {}
+
+grass.x = 0
+grass.y = canvas.height/1.7;
+grass.w = w
+grass.h = h/3
+
+
+grass.img = new Image()
+grass.img.src = "http://pngimg.com/upload/grass_PNG401.png";
+
+
+var dirt = {};
+
+dirt.x = 0
+dirt.y = h/1.2
+dirt.w = w
+dirt.h = h/4;
+
+
+dirt.img = new Image();
+dirt.img.src = "http://1.bp.blogspot.com/-XiAd3I4RUdY/UMoAdJ0bv6I/AAAAAAAAA6o/eP_t-LTXlEU/s1600/stones1.png"
+
+
+
+
+
+
+
+var drawSky = function(){
+
+
+	//sky
+	ctx.drawImage(sky.img , sky.x , sky.y , sky.w , sky.h);
+
+	//sun
+	ctx.drawImage(sun.img , sun.x , sun.y , sun.w , sun.h);
+}
+
+
+
+
+
+
+
+
+var ground = function(){
+	
+	//dirt
+	ctx.drawImage(dirt.img , dirt.x , dirt.y , dirt.w , dirt.h)
+
+
+	//grass
+	ctx.drawImage(grass.img , grass.x , grass.y , grass.w , grass.h)
+}
+
+
