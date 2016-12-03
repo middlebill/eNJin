@@ -1,0 +1,114 @@
+var canvas = document.getElementById("canvas")
+var ctx = canvas.getContext("2d");
+
+var w = canvas.width;
+var h = canvas.height;
+
+var rectangle = function(x1 , y1 , width , height , fillColor , strokeColor , lineWidth , img){
+	
+	var img = ctx.beginPath();
+	img += ctx.lineWidth = lineWidth;
+	img += ctx.fillStyle = fillColor;
+	img += ctx.strokeStyle = strokeColor ;
+	img += ctx.rect(x1 , y1 , width , height);
+	img += ctx.fill();
+	img += ctx.stroke();
+	img += ctx.closePath();
+}
+
+var circle = function(x1 , y1 , radius , fillColor , strokeColor , lineWidth , img){
+	
+	var img = ctx.beginPath();
+	img += ctx.lineWidth = lineWidth;
+	img += ctx.fillStyle = fillColor;
+	img += ctx.strokeStyle = strokeColor ;
+	img += ctx.arc(x1 , y1 , radius , 0 , Math.PI*2);
+	img += ctx.fill();
+	img += ctx.stroke();
+	img += ctx.closePath();
+}
+
+
+
+var halfCircle = function(x1 , y1 , radius , fillColor , strokeColor , lineWidth , img){
+	
+	var img = ctx.beginPath();
+	img += ctx.lineWidth = lineWidth;
+	img += ctx.fillStyle = fillColor;
+	img += ctx.strokeStyle = strokeColor ;
+	img += ctx.arc(x1 , y1 , radius , 0 , Math.PI);
+	img += ctx.fill();
+	img += ctx.stroke();
+	img += ctx.closePath();
+}
+
+
+var triangle = function(x1 , y1 , x2 , y2, x3 , y3 , fillColor ,strokeColor , lineWidth , img){
+	
+	var img = ctx.beginPath();
+	img += ctx.lineWidth = lineWidth;
+	img += ctx.fillStyle = fillColor;
+	img += ctx.strokeStyle = strokeColor ;
+	img += ctx.moveTo(x1 , y1)
+	img += ctx.lineTo(x2 , y2)
+	img += ctx.lineTo(x3 , y3)
+	img += ctx.lineTo(x1 , y1)
+	img += ctx.fill();
+	img += ctx.stroke();
+	img += ctx.closePath();
+}
+
+var line = function(x1 , y1 , x2 , y2, strokeColor , lineWidth , img){
+	
+	var img = ctx.beginPath();
+	img += ctx.lineWidth = lineWidth;
+	img += ctx.strokeStyle = strokeColor ;
+	img += ctx.moveTo(x1 , y1)
+	img += ctx.lineTo(x2 , y2)
+	img += ctx.stroke();
+	img += ctx.closePath();
+}
+
+
+var gamePlayer = function(x , y , w , h , health , lives , imgSRC){
+
+	this.x = x
+	this.y = y
+	this.w = w
+	this.h = h
+	this.health = health;
+	this.lives = lives
+
+	var img = new Image();
+	img.src = imgSRC;
+
+	this.pic = ctx.drawImage(img , x , y , w , h)
+
+
+}
+
+
+
+var gameObj = function(x , y , w , h ,  imgSRC){
+
+	this.x = x
+	this.y = y
+	this.w = w
+	this.h = h
+
+
+	var img = new Image();
+	img.src = imgSRC;
+
+	this.pic = ctx.drawImage(img , x , y , w , h)
+
+
+}
+
+
+
+
+
+
+
+
